@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% block title %}Eric Kwizera | Portfolio{% endblock %}</title>
+
+    <meta
+        name="description"
+        content="Eric Kwizera — Monitoring and Evaluation Specialist,
+                 Statistician and Data Analyst based in Kigali, Rwanda."
+    >
+
+    <style>
+        :root {
+            --blue: #144fa0;
+            --dark-blue: #103d7a;
+            --pale-blue: #eaf2fb;
+            --text: #273444;
+            --muted: #596575;
+            --border: #dce5ef;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 110px;
+        }
+
+        body {
+            margin: 0;
+            background: white;
+            color: var(--text);
+            font-family: "Segoe UI", Arial, sans-serif;
+            line-height: 1.75;
+        }
+
+        .container {
+            width: min(1100px, 90%);
+            margin: auto;
+        }
+
+        a {
+            color: var(--blue);
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 20;
+            background: var(--blue);
+        }
+
+        .navigation {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            padding: 18px 0;
+        }
+
+        .brand {
+            color: white;
+            text-decoration: none;
+            font-size: 34px;
+            font-weight: 800;
+            letter-spacing: -2px;
+        }
+
+        .brand span {
+            color: #a8cbfa;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 26px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+        }
+
+        nav a:hover,
+        nav a[aria-current="page"] {
+            text-decoration: underline;
+            text-underline-offset: 8px;
+        }
+
+        .nav-hire {
+            padding: 6px 22px;
+            border-radius: 30px;
+            background: #ffffff20;
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: 1.4fr 1fr;
+            align-items: center;
+            gap: 60px;
+            padding: 80px 0 65px;
+        }
+
+        .accent {
+            width: 75px;
+            height: 4px;
+            margin-bottom: 22px;
+            background: var(--blue);
+        }
+
+        h1 {
+            margin: 0 0 20px;
+            color: var(--blue);
+            font-size: clamp(38px, 5vw, 56px);
+            line-height: 1.15;
+            letter-spacing: -1.5px;
+        }
+
+        h1 span {
+            font-weight: 400;
+        }
+
+        .role {
+            color: var(--blue);
+            font-size: 19px;
+            font-weight: 600;
+        }
+
+        .intro {
+            color: var(--muted);
+            font-size: 17px;
+        }
+
+        .actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 26px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 11px 24px;
+            border: 1px solid var(--blue);
+            border-radius: 5px;
+            background: var(--blue);
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        .button.secondary {
+            background: white;
+            color: var(--blue);
+        }
+
+        .button:hover {
+            background: var(--dark-blue);
+            border-color: var(--dark-blue);
+            color: white;
+        }
+
+        .profile {
+            padding: 40px 28px;
+            border-radius: 16px;
+            background: var(--pale-blue);
+            text-align: center;
+        }
+
+        .initials {
+            display: grid;
+            place-items: center;
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 24px;
+            border-radius: 50%;
+            background: var(--blue);
+            color: white;
+            font-size: 55px;
+            font-weight: 800;
+        }
+
+        .profile h2 {
+            margin: 0;
+            color: var(--blue);
+            font-size: 24px;
+        }
+
+        .profile p {
+            margin: 8px 0;
+            color: var(--muted);
+        }
+
+        .section {
+            padding: 55px 0;
+        }
+
+        .section-heading {
+            margin: 0 0 32px;
+            padding-bottom: 22px;
+            border-bottom: 1px solid #9bb8db;
+            color: var(--blue);
+            text-align: center;
+            font-size: clamp(26px, 4vw, 34px);
+            font-weight: 500;
+            line-height: 1.3;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .card {
+            overflow: hidden;
+            background: var(--pale-blue);
+            text-align: center;
+        }
+
+        .card h3 {
+            margin: 0;
+            padding: 16px;
+            background: var(--blue);
+            color: white;
+            font-size: 16px;
+        }
+
+        .card p {
+            margin: 0;
+            padding: 24px;
+            font-size: 15px;
+        }
+
+        .card.middle {
+            background: var(--blue);
+            color: white;
+        }
+
+        .card.middle h3 {
+            background: var(--pale-blue);
+            color: var(--blue);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 22px;
+            align-items: start;
+        }
+
+        details {
+            margin-bottom: 16px;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        summary {
+            padding: 13px 18px;
+            background: var(--blue);
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        details p {
+            margin: 0;
+            padding: 20px;
+            color: var(--muted);
+            font-size: 15px;
+        }
+
+        .experience-item {
+            padding: 22px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .experience-item h3 {
+            margin: 0;
+            color: var(--blue);
+            font-size: 19px;
+        }
+
+        .experience-item p {
+            margin: 8px 0 0;
+            color: var(--muted);
+        }
+
+        .period {
+            font-size: 14px;
+        }
+
+        .hire-panel {
+            padding: 42px;
+            border-radius: 12px;
+            background: var(--pale-blue);
+        }
+
+        .hire-panel h2 {
+            margin: 0 0 12px;
+            color: var(--blue);
+            font-size: 32px;
+        }
+
+        .hire-panel p {
+            max-width: 720px;
+            color: var(--muted);
+        }
+
+        footer {
+            margin-top: 0;
+            padding: 35px 0;
+            border-top: 0;
+            background: var(--blue);
+            color: white;
+            text-align: center;
+            font-size: 13px;
+        }
+
+        footer a {
+            color: white;
+        }
+
+        .footer-brand {
+            display: inline-block;
+            margin-bottom: 16px;
+            color: white;
+            text-decoration: none;
+            font-size: 30px;
+            font-weight: 800;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 22px;
+            margin-bottom: 16px;
+        }
+
+        .footer-links a {
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        a:focus-visible,
+        summary:focus-visible {
+            outline: 3px solid #e1a534;
+            outline-offset: 5px;
+        }
+
+        @media (max-width: 760px) {
+            .navigation {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+
+            nav {
+                gap: 16px;
+            }
+
+            nav a {
+                font-size: 14px;
+            }
+
+            .hero,
+            .cards,
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding-top: 45px;
+                gap: 30px;
+            }
+
+            .section {
+                padding: 35px 0;
+            }
+
+            .hire-panel {
+                padding: 26px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container navigation">
+            <a
+                class="brand"
+                href="{% url 'home' %}"
+                aria-label="Eric Kwizera homepage"
+            >
+                EK<span>.</span>
+            </a>
+
+            <nav aria-label="Main navigation">
+                <a href="{% url 'home' %}">Home</a>
+                <a href="{% url 'resume' %}">Resume</a>
+                <a href="{% url 'home' %}#skills">Skills</a>
+                <a href="{% url 'contact' %}">Contact</a>
+
+                <a class="nav-hire" href="{% url 'home' %}#hire">
+                    Hire Me
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <div class="container">
+            <a
+                class="footer-brand"
+                href="{% url 'home' %}"
+                aria-label="Eric Kwizera homepage"
+            >
+                EK.
+            </a>
+
+            <div class="footer-links">
+                <a href="{% url 'home' %}">Home</a>
+                <a href="{% url 'resume' %}">Resume</a>
+                <a href="{% url 'contact' %}">Contact</a>
+
+                <a href="https://www.linkedin.com/in/erickwizera14">
+                    LinkedIn
+                </a>
+            </div>
+
+            <p>
+                © {% now "Y" %} Eric Kwizera. All rights reserved.
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

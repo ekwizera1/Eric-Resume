@@ -1,0 +1,225 @@
+{% extends "portifolio/base.html" %}
+
+{% block title %}
+Eric Kwizera | Monitoring, Evaluation & Data Analytics
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <section class="hero">
+        <div>
+            <div class="accent"></div>
+
+            <h1>Eric <span>Kwizera</span></h1>
+
+            <p class="role">
+                Monitoring &amp; Evaluation Specialist ·
+                Statistician · Data Analyst
+            </p>
+
+            <p class="intro">
+                I help public institutions track performance,
+                strengthen data quality, and turn evidence into clear
+                reports for decision-makers.
+            </p>
+
+            <p class="intro">
+                With over seven years of experience across national,
+                city, district and hospital institutions in Rwanda,
+                I connect planning and measurable results.
+            </p>
+
+            <div class="actions">
+    <a class="button" href="{% url 'resume' %}">
+        Read My Resume
+    </a>
+
+    <a class="button secondary" href="{% url 'contact' %}">
+        Contact Me
+    </a>
+</div>
+        </div>
+
+        <aside class="profile" aria-label="Professional profile">
+            <div class="initials" aria-hidden="true">EK</div>
+
+            <h2>Eric Kwizera</h2>
+            <p>Data, Monitoring &amp; Evaluation Specialist</p>
+            <p><strong>City of Kigali</strong></p>
+            <p>Kigali, Rwanda</p>
+        </aside>
+    </section>
+
+    <section class="section" aria-labelledby="expertise-title">
+        <h2 class="section-heading" id="expertise-title">
+            My Areas of Expertise
+        </h2>
+
+        <div class="cards">
+            <article class="card">
+                <h3>MONITORING &amp; EVALUATION</h3>
+                <p>
+                    SMART indicators, strategic plan monitoring,
+                    Imihigo performance tracking and consolidated
+                    reporting across departments.
+                </p>
+            </article>
+
+            <article class="card middle">
+                <h3>STATISTICS &amp; DATA ANALYTICS</h3>
+                <p>
+                    Data cleaning, statistical analysis and
+                    visualisation using Python, R, SPSS, Excel
+                    and Power BI to support decisions.
+                </p>
+            </article>
+
+            <article class="card">
+                <h3>RESEARCH &amp; DATA COLLECTION</h3>
+                <p>
+                    Survey design, digital collection tools,
+                    field coordination, enumerator training
+                    and data quality assurance.
+                </p>
+            </article>
+        </div>
+    </section>
+
+    <section class="section" id="skills">
+        <h2 class="section-heading">
+            Skills &amp; Technical Tools
+        </h2>
+
+        <div class="skills-grid">
+            <div>
+                <details open>
+                    <summary>Planning &amp; Performance Monitoring</summary>
+                    <p>
+                        Developing SMART indicators, tracking targets,
+                        monitoring strategic plans and Imihigo, and
+                        coordinating reporting across departments.
+                    </p>
+                </details>
+
+                <details>
+                    <summary>Statistical Analysis</summary>
+                    <p>
+                        Cleaning, analysing and interpreting data
+                        using Python, R, SPSS and Advanced Excel.
+                    </p>
+                </details>
+
+                <details>
+                    <summary>Digital Data Collection</summary>
+                    <p>
+                        Designing and deploying collection tools
+                        with KoboToolbox, ODK, SurveyCTO,
+                        CSPro and XLSForm.
+                    </p>
+                </details>
+            </div>
+
+            <div>
+                <details open>
+                    <summary>Data Visualisation &amp; Reporting</summary>
+                    <p>
+                        Building dashboards, charts and analytical
+                        reports with Power BI, Excel and statistical
+                        tools to communicate findings.
+                    </p>
+                </details>
+
+                <details>
+                    <summary>Data Management &amp; Quality</summary>
+                    <p>
+                        Maintaining institutional datasets,
+                        aggregating socio-economic data and
+                        conducting data quality assessments.
+                    </p>
+                </details>
+
+                <details>
+                    <summary>Training &amp; Field Coordination</summary>
+                    <p>
+                        Training enumerators and coordinating field
+                        teams. Led district-wide Ubudehe data
+                        collection and trained over 600 enumerators.
+                    </p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="experience">
+        <h2 class="section-heading">
+            Selected Professional Experience
+        </h2>
+
+        <article class="experience-item">
+            <h3>Data, Monitoring &amp; Evaluation Specialist</h3>
+            <p class="period">City of Kigali · Nov 2022 – Present</p>
+            <p>
+                Develop and review SMART indicators, monitor strategic
+                plans and Imihigo, and produce consolidated reports
+                that support city leadership.
+            </p>
+        </article>
+
+        <article class="experience-item">
+            <h3>Data Management Officer</h3>
+            <p class="period">
+                Nyarugenge District · Nov 2021 – Oct 2022
+            </p>
+            <p>
+                Developed systems for aggregating socio-economic data
+                and maintained institutional datasets for planning.
+            </p>
+        </article>
+
+        <article class="experience-item">
+            <h3>Data Manager &amp; Statistician · Part-time</h3>
+            <p class="period">Muhima Hospital · Mar 2022 – Jun 2022</p>
+            <p>
+                Managed HMIS and CRVS data, produced routine reports,
+                and assessed data quality across health centres.
+            </p>
+        </article>
+
+        <article class="experience-item">
+            <h3>District Statistician</h3>
+            <p class="period">
+                Nyarugenge District · Apr 2019 – Oct 2021
+            </p>
+            <p>
+                Supervised data collection, deployed digital tools,
+                coordinated statistical activities and supported
+                district performance monitoring.
+            </p>
+        </article>
+
+        <article class="experience-item">
+            <h3>Imihigo Evaluation Researcher · Contract</h3>
+            <p class="period">NISR · Feb 2019 – Jul 2020</p>
+            <p>
+                Evaluated ministry and district performance through
+                audits, field visits and stakeholder interviews.
+            </p>
+        </article>
+    </section>
+
+    <section class="section" id="hire">
+        <div class="hire-panel">
+            <h2>Let’s Work Together</h2>
+            <p>
+                Looking for experience in monitoring and evaluation,
+                statistics, research or data analytics? Get in touch
+                to discuss your role or project.
+            </p>
+
+            <a class="button" href="{% url 'contact' %}">
+                Get in Touch →
+            </a>
+        </div>
+    </section>
+</div>
+{% endblock %}

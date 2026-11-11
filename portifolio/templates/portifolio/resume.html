@@ -1,0 +1,475 @@
+{% extends "portifolio/base.html" %}
+
+{% block title %}Resume | Eric Kwizera{% endblock %}
+
+{% block content %}
+<style>
+    .resume-page {
+        width: min(900px, 90%);
+        margin: auto;
+        padding: 60px 0;
+    }
+
+    .resume-heading {
+        margin: 0 0 22px;
+        color: var(--blue);
+        font-size: 32px;
+        font-weight: 700;
+        line-height: 1.3;
+    }
+
+    .resume-heading span {
+        font-weight: 400;
+    }
+
+    .resume-intro {
+        margin-bottom: 45px;
+        color: var(--muted);
+        font-size: 15px;
+    }
+
+    .work-item {
+        margin: 0;
+        border: 0;
+        border-bottom: 1px solid var(--border);
+        border-radius: 0;
+        overflow: visible;
+    }
+
+    .work-item summary {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        padding: 23px 0;
+        background: white;
+        color: var(--blue);
+        list-style: none;
+    }
+
+    .work-item summary::-webkit-details-marker {
+        display: none;
+    }
+
+    .work-item summary::after {
+        content: "+";
+        flex-shrink: 0;
+        font-size: 24px;
+        font-weight: 400;
+    }
+
+    .work-item[open] summary::after {
+        content: "−";
+    }
+
+    .job-title {
+        display: block;
+        font-size: 17px;
+        font-weight: 600;
+        line-height: 1.5;
+    }
+
+    .job-date {
+        display: block;
+        margin-top: 5px;
+        font-size: 13px;
+        font-weight: 400;
+    }
+
+    .job-description {
+        margin-bottom: 20px;
+        padding: 22px 26px;
+        background: var(--pale-blue);
+        color: var(--text);
+        font-size: 14px;
+    }
+
+    .job-description ul {
+        margin: 0;
+        padding-left: 20px;
+    }
+
+    .job-description li + li {
+        margin-top: 8px;
+    }
+
+    .resume-section {
+        margin-top: 60px;
+    }
+
+    .education-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+    }
+
+    .education-card {
+        background: var(--pale-blue);
+    }
+
+    .education-card h3 {
+        margin: 0;
+        padding: 12px 16px;
+        background: var(--blue);
+        color: white;
+        font-size: 15px;
+        font-weight: 600;
+    }
+
+    .education-body {
+        padding: 18px;
+    }
+
+    .education-body h4 {
+        margin: 0 0 9px;
+        color: var(--blue);
+        font-size: 15px;
+    }
+
+    .education-body p {
+        margin: 5px 0;
+        color: var(--muted);
+        font-size: 14px;
+    }
+
+    .resume-skills {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+        padding: 24px;
+        background: var(--blue);
+        color: white;
+    }
+
+    .resume-skills span {
+        padding: 5px 13px;
+        border: 1px solid #ffffff55;
+        border-radius: 4px;
+        font-size: 14px;
+    }
+
+    .languages {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px 30px;
+        color: var(--muted);
+        font-size: 15px;
+    }
+
+    .resume-contact {
+        margin-top: 45px;
+    }
+
+    @media (max-width: 760px) {
+        .resume-page {
+            padding-top: 40px;
+        }
+
+        .education-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .job-title {
+            font-size: 16px;
+        }
+
+        .job-description {
+            padding: 18px;
+        }
+    }
+</style>
+
+<div class="resume-page">
+    <div class="accent"></div>
+
+    <h1 class="resume-heading">My Work <span>Experience</span></h1>
+
+    <div class="resume-intro">
+        <p>
+            I am a statistician and monitoring and evaluation professional
+            with over seven years of experience across national, city,
+            district and hospital institutions in Rwanda.
+        </p>
+
+        <p>
+            My work combines strategic planning, performance monitoring,
+            data quality assurance and statistical analysis. At the City
+            of Kigali, I develop SMART indicators, monitor strategic plans
+            and Imihigo, and coordinate consolidated performance reporting.
+        </p>
+
+        <p>
+            I hold a Bachelor of Science in Applied Statistics and am
+            pursuing a Master of Science in Big Data Analytics at the
+            Adventist University of Central Africa.
+        </p>
+    </div>
+
+    <section aria-label="Professional experience">
+        <details class="work-item" open>
+            <summary>
+                <span>
+                    <span class="job-title">
+                        Data, Monitoring &amp; Evaluation Specialist
+                        — City of Kigali
+                    </span>
+                    <span class="job-date">Nov 2022 – Present</span>
+                </span>
+            </summary>
+
+            <div class="job-description">
+                <ul>
+                    <li>
+                        Develop and review SMART performance indicators
+                        aligned with city strategic plans.
+                    </li>
+                    <li>
+                        Monitor strategic plans and Imihigo performance
+                        contracts against agreed targets.
+                    </li>
+                    <li>
+                        Produce consolidated performance reports that
+                        support leadership decisions.
+                    </li>
+                    <li>
+                        Strengthen monitoring tools and coordinate
+                        reporting across departments.
+                    </li>
+                </ul>
+            </div>
+        </details>
+
+        <details class="work-item">
+            <summary>
+                <span>
+                    <span class="job-title">
+                        Data Management Officer — Nyarugenge District
+                    </span>
+                    <span class="job-date">Nov 2021 – Oct 2022</span>
+                </span>
+            </summary>
+
+            <div class="job-description">
+                <ul>
+                    <li>
+                        Developed systems for aggregating and managing
+                        socio-economic data for district planning.
+                    </li>
+                    <li>
+                        Maintained institutional datasets and ensured
+                        up-to-date information was available to planners.
+                    </li>
+                </ul>
+            </div>
+        </details>
+
+        <details class="work-item">
+            <summary>
+                <span>
+                    <span class="job-title">
+                        Data Manager &amp; Statistician — Muhima Hospital
+                    </span>
+                    <span class="job-date">
+                        Mar 2022 – Jun 2022 · Part-time
+                    </span>
+                </span>
+            </summary>
+
+            <div class="job-description">
+                <ul>
+                    <li>
+                        Managed HMIS and CRVS data and produced daily,
+                        monthly and annual reports.
+                    </li>
+                    <li>
+                        Conducted data quality assessments across health
+                        centres and presented findings through charts
+                        and reports.
+                    </li>
+                </ul>
+            </div>
+        </details>
+
+        <details class="work-item">
+            <summary>
+                <span>
+                    <span class="job-title">
+                        District Statistician — Nyarugenge District
+                    </span>
+                    <span class="job-date">Apr 2019 – Oct 2021</span>
+                </span>
+            </summary>
+
+            <div class="job-description">
+                <ul>
+                    <li>
+                        Designed and supervised large-scale data collection,
+                        analysis and reporting.
+                    </li>
+                    <li>
+                        Led district-wide Ubudehe data collection and
+                        trained over 600 enumerators.
+                    </li>
+                    <li>
+                        Designed and deployed digital collection tools
+                        using KoboToolbox.
+                    </li>
+                    <li>
+                        Supported Imihigo monitoring and the development
+                        of M&amp;E systems and tools.
+                    </li>
+                    <li>
+                        Coordinated statistical activities with national
+                        institutions and assessed institutional data quality.
+                    </li>
+                </ul>
+            </div>
+        </details>
+
+        <details class="work-item">
+            <summary>
+                <span>
+                    <span class="job-title">
+                        Imihigo Evaluation Researcher — NISR
+                    </span>
+                    <span class="job-date">
+                        Feb 2019 – Jul 2020 · Contract
+                    </span>
+                </span>
+            </summary>
+
+            <div class="job-description">
+                <ul>
+                    <li>
+                        Evaluated ministry and district performance
+                        through audits, field visits and stakeholder
+                        interviews.
+                    </li>
+                    <li>
+                        Assessed implementation progress and contributed
+                        to quarterly, mid-term and final evaluations.
+                    </li>
+                </ul>
+            </div>
+        </details>
+
+        <details class="work-item">
+            <summary>
+                <span>
+                    <span class="job-title">
+                        Data Analyst — Effective Logistic and Consultancy
+                        Group
+                    </span>
+                    <span class="job-date">Oct 2018</span>
+                </span>
+            </summary>
+
+            <div class="job-description">
+                <ul>
+                    <li>
+                        Cleaned and analysed data using SPSS.
+                    </li>
+                    <li>
+                        Produced statistical reports with visualisations
+                        and analytical findings.
+                    </li>
+                </ul>
+            </div>
+        </details>
+
+        <details class="work-item">
+            <summary>
+                <span>
+                    <span class="job-title">
+                        Research Assistant — IMANZI Ltd
+                    </span>
+                    <span class="job-date">Dec 2015</span>
+                </span>
+            </summary>
+
+            <div class="job-description">
+                <ul>
+                    <li>
+                        Participated in an agricultural productivity
+                        baseline study.
+                    </li>
+                    <li>
+                        Collected data using ODK tools across multiple
+                        districts.
+                    </li>
+                </ul>
+            </div>
+        </details>
+    </section>
+
+    <section class="resume-section" aria-labelledby="education-title">
+        <div class="accent"></div>
+        <h2 class="resume-heading" id="education-title">Education</h2>
+
+        <div class="education-grid">
+            <article class="education-card">
+                <h3>Master’s Degree · Ongoing</h3>
+                <div class="education-body">
+                    <h4>Adventist University of Central Africa</h4>
+                    <p>MSc in Big Data Analytics</p>
+                    <p>2025 – Present</p>
+                </div>
+            </article>
+
+            <article class="education-card">
+                <h3>Bachelor’s Degree</h3>
+                <div class="education-body">
+                    <h4>University of Rwanda</h4>
+                    <p>BSc in Applied Statistics</p>
+                    <p>2012 – 2016</p>
+                </div>
+            </article>
+
+            <article class="education-card">
+                <h3>Advanced Certificate</h3>
+                <div class="education-body">
+                    <h4>Groupe Scolaire Muhura</h4>
+                    <p>Physics, Chemistry and Mathematics</p>
+                    <p>2009 – 2011</p>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section class="resume-section" aria-labelledby="skills-title">
+        <h2 class="resume-heading" id="skills-title">Skills</h2>
+
+        <div class="resume-skills">
+            <span>Monitoring &amp; Evaluation</span>
+            <span>Python</span>
+            <span>R</span>
+            <span>SPSS</span>
+            <span>Power BI</span>
+            <span>Advanced Excel</span>
+            <span>MySQL</span>
+            <span>KoboToolbox</span>
+            <span>ODK</span>
+            <span>SurveyCTO</span>
+            <span>CSPro</span>
+            <span>XLSForm</span>
+        </div>
+    </section>
+
+    <section class="resume-section" aria-labelledby="languages-title">
+        <h2 class="resume-heading" id="languages-title">Languages</h2>
+
+        <div class="languages">
+            <span><strong>Kinyarwanda</strong> · Native</span>
+            <span><strong>English</strong> · Fluent</span>
+            <span><strong>French</strong> · Intermediate</span>
+        </div>
+    </section>
+
+    <div class="resume-contact">
+        <a class="button" href="{% url 'contact' %}">
+            Discuss an Opportunity →
+        </a>
+    </div>
+</div>
+{% endblock %}
